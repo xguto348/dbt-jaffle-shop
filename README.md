@@ -54,10 +54,10 @@ renamed as (
 select * from renamed
 
 ## 📌 Key Learnings
-Analytics-oriented data modeling
-dbt best practices
-Data quality testing
-Integration with Snowflake
+- Analytics-oriented data modeling
+- dbt best practices
+- Data quality testing
+- Integration with Snowflake 
 
 💡 Note
 
