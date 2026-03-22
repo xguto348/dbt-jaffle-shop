@@ -1,15 +1,64 @@
-Welcome to your new dbt project!
+# 📊 dbt Jaffle Shop Project
 
-### Using the starter project
+This project was developed as part of the **dbt Fundamentals (dbt Labs)** course, with the goal of practicing Analytics Engineering concepts using dbt and Snowflake.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
 
+## 🧠 Objective
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+Build a data transformation pipeline following best practices in layered data modeling:
+
+- **Staging** → data cleaning and standardization  
+- **Intermediate** → transformation logic  
+- **Marts** → analytics-ready data  
+
+---
+
+## 🛠️ Technologies
+
+- dbt (data build tool)  
+- Snowflake  
+- Git / GitHub  
+
+---
+
+## ⚙️ What was implemented
+
+- dbt models using `ref()`  
+- Source configuration using `source()`  
+- Data quality tests:
+  - `not_null`  
+  - `unique`  
+  - `relationships`  
+  - `accepted_values`  
+- Layered architecture (staging → marts)  
+
+---
+
+## ✅ Example Model
+
+SQL:
+with 
+source as (
+    select * from {{ source('jaffle_shop', 'customers') }}
+),
+
+renamed as (
+    select
+        id as customer_id,
+        first_name,
+        last_name
+    from source
+)
+
+select * from renamed
+
+## 📌 Key Learnings
+Analytics-oriented data modeling
+dbt best practices
+Data quality testing
+Integration with Snowflake
+
+💡 Note
+
+This project is part of my journey to grow as a Data / Analytics Engineer, applying modern data tools and best practices in real-world scenarios.
