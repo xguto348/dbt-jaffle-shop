@@ -7,4 +7,4 @@
         CREATED,
         _BATCHED_AT
 
-    from raw.stripe.payment
+    from {{ source('stripe', 'payment') }}
